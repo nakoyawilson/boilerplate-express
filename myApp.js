@@ -13,8 +13,11 @@ app.use("/public", express.static(publicPath));
 indexPath = __dirname + "/views/index.html"
 app.get("/", (req, res) => {
   res.sendFile(indexPath);
-})
+});
 
+app.get("/json", (req, res) => {
+  res.json({ "message": "Hello json" });
+});
 
 
 
