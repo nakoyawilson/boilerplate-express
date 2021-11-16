@@ -7,9 +7,12 @@ console.log("Hello World");
 //   res.send("Hello Express");
 // })
 
-path = __dirname + "/views/index.html"
+publicPath = __dirname + "/public"
+app.use("/public", express.static(publicPath));
+
+indexPath = __dirname + "/views/index.html"
 app.get("/", (req, res) => {
-  res.sendFile(path);
+  res.sendFile(indexPath);
 })
 
 
